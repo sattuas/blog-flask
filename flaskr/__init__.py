@@ -31,4 +31,7 @@ def create_app(test_config=None):
     def hello():
         return 'hello, world!'
     
+    from . import auth
+    app.register_blueprint(auth.bp)
+    
     return app
